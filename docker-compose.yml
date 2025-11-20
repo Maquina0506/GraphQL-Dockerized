@@ -1,0 +1,42 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: libreria
+
+  mongo-express:
+    image: mongo-express:1
+    restart: unless-stopped
+    depends_on: [mongo]
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+
+  graphql-api:
+    build: ./graphql-api
+    depends_on: [mongo]
+    # Deja SOLO un bloque 'environment' y combina todo aquí:
+    environment:
+      MONGO_URI: mongodb://mongo:27017
+      JWT_SECRET: ${JWT_SECRET}
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - "5001:5000"   # si prefieres 5000:5000, también vale
+
+  web:
+    build: ./web
+    depends_on: [graphql-api]
+    environment:
+      VITE_GRAPHQL_URL: http://localhost:5001/graphql  # ajusta al puerto que uses arriba
+    ports:
+      - "5173:5173"
+
+volumes:
+  mongo_data:
+
