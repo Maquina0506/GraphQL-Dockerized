@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraphQL Dockerized - Sitio de práctica</title>
+  <meta name="description" content="Sitio de práctica para análisis básico de vulnerabilidades con HostedScan">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+    header {
+      background: #0d1117;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    .card {
+      background: #f9fafb;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+    ul {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GraphQL Dockerized</h1>
+    <p>Sitio web de práctica para laboratorio de análisis de vulnerabilidades</p>
+  </header>
 
+  <main>
+    <section class="card">
+      <h2>Descripción</h2>
+      <p>
+        Este sitio fue publicado como parte de una práctica académica para realizar
+        un análisis básico de seguridad sobre una aplicación web autorizada.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Tecnologías del proyecto original</h2>
+      <ul>
+        <li>ASP.NET Core</li>
+        <li>Docker</li>
+        <li>GraphQL</li>
+        <li>MongoDB</li>
+        <li>Frontend web</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Formulario de contacto</h2>
+      <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje"></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Repositorio del proyecto</h2>
+      <p>
+        <a href="https://github.com/Maquina0506/GraphQL-Dockerized" target="_blank">
+          Ver repositorio en GitHub
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Práctica académica de análisis de vulnerabilidades - 2026</p>
+  </footer>
+</body>
+</html>
